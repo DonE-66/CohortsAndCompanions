@@ -6,31 +6,27 @@
 -->
 
 <root>
-	<windowclass name="charsheet" merge="join">
+	<windowclass name="charsheet_notes" merge="join">
 		<sheetdata>
-
-			<sub_charsheet name="notes">
-				<class>charsheet_notes_and_logs</class>
-			</sub_charsheet>
-			<sub_charsheet name="logs">
-				<class>charsheet_cohorts</class>
-			</sub_charsheet>
-
-			<tabs_charsheet name="tabs">
-				<script>
-					function onInit()
-						if tab and type(tab) == "table" then
-							for index,tabInfo in ipairs(tab) do
-								if (type(tabInfo) == "table") and (tabInfo.subwindow[1] == "logs") then
-									tabInfo.icon[1] = "tab_cohorts";
-								end
-							end
-						end
-
-						super.onInit();
-					end
-				</script>
-			</tabs_charsheet>
+			<frame_char name="cohorts_frame">
+				<bounds>15,235,-29,125</bounds>
+			</frame_char>
+						
+			<frame_char name="notesframe">
+				<bounds>15,360,-29,-2</bounds>
+			</frame_char>
+			
+			<subwindow name="contents">
+				<anchored>
+					<top parent="cohorts_frame" anchor="top" relation="relative" offset="0" />
+					<left offset="0" />
+					<right parent="cohorts_frame" anchor="right" relation="relative" />
+				</anchored>
+				<class>charsheet_cohorts_contents</class>
+				<activate />
+				<fastinit />
+			</subwindow>
+			
 		</sheetdata>
 	</windowclass>
 </root>

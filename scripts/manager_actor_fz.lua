@@ -12,14 +12,14 @@ function onInit()
 	getActorRecordTypeFromPathOriginal = ActorManager.getActorRecordTypeFromPath;
 	ActorManager.getActorRecordTypeFromPath = getActorRecordTypeFromPath;
 
-	getSaveOriginal = ActorManager5E.getSave;
-	ActorManager5E.getSave = getSave;
+	getSaveOriginal = ActorManager35E.getSave;
+	ActorManager35E.getSave = getSave;
 
-	getCheckOriginal = ActorManager5E.getCheck;
-	ActorManager5E.getCheck = getCheck;
+	getCheckOriginal = ActorManager35E.getCheck;
+	ActorManager35E.getCheck = getCheck;
 
-	getDefenseValueOriginal = ActorManager5E.getDefenseValue;
-	ActorManager5E.getDefenseValue = getDefenseValue;
+	getDefenseValueOriginal = ActorManager35E.getDefenseValue;
+	ActorManager35E.getDefenseValue = getDefenseValue;
 end
 
 function getActorRecordTypeFromPath(sActorNodePath)

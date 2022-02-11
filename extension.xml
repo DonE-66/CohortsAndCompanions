@@ -1,51 +1,27 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
-<!--
-MIT License
-
-Copyright (c) 2021 MeAndUnique
-
-Permission is hereby granted, free of charge, to any person obtaining a copy
-of this software and associated documentation files (the "Software"), to deal
-in the Software without restriction, including without limitation the rights
-to use, copy, modify, merge, publish, distribute, sublicense, and/or sell
-copies of the Software, and to permit persons to whom the Software is
-furnished to do so, subject to the following conditions:
-
-The above copyright notice and this permission notice shall be included in all
-copies or substantial portions of the Software.
-
-THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
-IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
-FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
-AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
-LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
-OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
-SOFTWARE.
-
-Icons made by Freepik from www.flaticon.com
-
+<!-- 
+  Please see the license.txt file included with this distribution for 
+  attribution and copyright information.
 -->
 
 <root release="3.0" version="3">
 	<properties>
-		<name>Feature: Friend Zone</name>
-		<version>dev_version</version>
-		<author>MeAndUnique</author>
-		<description>Adds support for companions of any sort.</description>
+		<name>Feature: Cohorts and Companions</name>
+		<version>v1.0.0</version>
+		<author>MostTornBrain</author>
+		<description>Assign ownership of NPCs to PCs to allow players direct control of NPCs in the combat tracker and on the maps.</description>
 		<loadorder>150</loadorder>
+		<ruleset><name>3.5E</name></ruleset>
+		<ruleset><name>PFRPG</name></ruleset>
 	</properties>
 
 	<base>
-		<script name="ActionSkillFZ" file="scripts/manager_action_skill_fz.lua" />
 		<script name="ActorManagerFZ" file="scripts/manager_actor_fz.lua" />
 		<script name="CombatManagerFZ" file="scripts/manager_combat_fz.lua" />
 		<script name="FriendZone" file="scripts/friendzone.lua" />
-		<script name="HpManagerFZ" file="scripts/manager_hp_fz.lua" />
-		<script name="PowerManagerFZ" file="scripts/manager_power_fz.lua" />
 
 		<includefile source="campaign/record_char.xml" />
-		<includefile source="campaign/record_char_notes_and_logs.xml" />
 		<includefile source="campaign/record_char_cohorts.xml" />
 		<includefile source="campaign/record_npc.xml" />
 		<includefile source="ct/ct_host.xml" />
@@ -53,10 +29,8 @@ Icons made by Freepik from www.flaticon.com
 		<includefile source="strings/strings.xml" />
 		<includefile source="graphics/graphics_icons.xml" />
 		<includefile source="graphics/graphics_tabs.xml" />
-		
-		<icon name="FriendZone_icon" file="graphics/icons/FriendZone.png" />
 	</base>
 
-	<announcement text="Friend Zone dev_version by MeAndUnique." icon="FriendZone_icon" font="emotefont" />
+	<announcement text="Cohorts and Companions v1.0.0 by MostTornBrain.   Heavily based on FriendZone, by MeAndUnique." icon="FriendZone_icon" font="emotefont" />
 
 </root>

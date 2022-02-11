@@ -24,29 +24,25 @@ function linkNPCFields()
 		name.setLink(nodeChar.createChild("name", "string"), true);
 		senses.setLink(nodeChar.createChild("senses", "string"), true);
 
-		if HpManager then
-			hptotal.setLink(nodeChar.createChild("hptotal", "number"));
-		else
-			hptotal.setLink(nodeChar.createChild("hp", "number"));
-		end
-		hptemp.setLink(nodeChar.createChild("hptemp", "number"));
-		wounds.setLink(nodeChar.createChild("wounds", "number"));
-		deathsavesuccess.setLink(nodeChar.createChild("deathsavesuccess", "number"));
-		deathsavefail.setLink(nodeChar.createChild("deathsavefail", "number"));
-
-		type.setLink(nodeChar.createChild("race", "string"));
-		size.setLink(nodeChar.createChild("size", "string"));
-		alignment.setLink(nodeChar.createChild("alignment", "string"));
+		hp.setLink(nodeChar.createChild("hp", "number"));
 		
-		strength.setLink(nodeChar.createChild("abilities.strength.score", "number"), true);
-		dexterity.setLink(nodeChar.createChild("abilities.dexterity.score", "number"), true);
-		constitution.setLink(nodeChar.createChild("abilities.constitution.score", "number"), true);
-		intelligence.setLink(nodeChar.createChild("abilities.intelligence.score", "number"), true);
-		wisdom.setLink(nodeChar.createChild("abilities.wisdom.score", "number"), true);
-		charisma.setLink(nodeChar.createChild("abilities.charisma.score", "number"), true);
+		-- These don't exist on an NPC sheet.  Should they be added?
+		
+		-- hptemp.setLink(nodeChar.createChild("hp.temporary", "number"));
+		-- nonlethal.setLink(nodeChar.createChild("hp.nonlethal", "number"));
+		-- wounds.setLink(nodeChar.createChild("hp.wounds", "number"));
 
-		init.setLink(nodeChar.createChild("abilities.dexterity.bonus", "number"), true);
-		ac.setLink(nodeChar.createChild("ac", "number"), true);
-		speed.setLink(nodeChar.createChild("speed", "string"), true);
+		if DataCommon.isPFRPG() then
+			type.addSource(DB.getPath(nodeChar, "alignment"), true);
+		else
+			alignment.setLink(nodeChar.createChild("alignment", "string"));
+		end
+		type.addSource(DB.getPath(nodeChar, "type"));
+				
+		fortitudesave.setLink(nodeChar.createChild("fortitudesave", "number"), true);
+		reflexsave.setLink(nodeChar.createChild("reflexsave", "number"), true);
+		willsave.setLink(nodeChar.createChild("willsave", "number"), true);
+		
+		init.setLink(nodeChar.createChild("init", "number"), true);
 	end
 end
