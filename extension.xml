@@ -12,6 +12,7 @@
 		<author>MostTornBrain</author>
 		<description>Assign ownership of NPCs to PCs to allow players direct control of NPCs in the combat tracker and on the maps.</description>
 		<loadorder>150</loadorder>
+		<ruleset><name>4E</name></ruleset>
 		<ruleset><name>3.5E</name></ruleset>
 		<ruleset><name>PFRPG</name></ruleset>
 	</properties>

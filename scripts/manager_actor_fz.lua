@@ -12,14 +12,25 @@ function onInit()
 	getActorRecordTypeFromPathOriginal = ActorManager.getActorRecordTypeFromPath;
 	ActorManager.getActorRecordTypeFromPath = getActorRecordTypeFromPath;
 
-	getSaveOriginal = ActorManager35E.getSave;
-	ActorManager35E.getSave = getSave;
+	if User.getRulesetName() == "4E" then
+		getSaveOriginal = ActorManager4E.getSave;
+		ActorManager4E.getSave = getSave;
 
-	getCheckOriginal = ActorManager35E.getCheck;
-	ActorManager35E.getCheck = getCheck;
+		getCheckOriginal = ActorManager4E.getCheck;
+		ActorManager4E.getCheck = getCheck;
 
-	getDefenseValueOriginal = ActorManager35E.getDefenseValue;
-	ActorManager35E.getDefenseValue = getDefenseValue;
+		getDefenseValueOriginal = ActorManager4E.getDefenseValue;
+		ActorManager4E.getDefenseValue = getDefenseValue;
+	else
+		getSaveOriginal = ActorManager35E.getSave;
+		ActorManager35E.getSave = getSave;
+
+		getCheckOriginal = ActorManager35E.getCheck;
+		ActorManager35E.getCheck = getCheck;
+
+		getDefenseValueOriginal = ActorManager35E.getDefenseValue;
+		ActorManager35E.getDefenseValue = getDefenseValue;
+	end
 end
 
 function getActorRecordTypeFromPath(sActorNodePath)
