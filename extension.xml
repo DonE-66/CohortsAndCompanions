@@ -32,6 +32,6 @@
 		<includefile source="graphics/graphics_tabs.xml" />
 	</base>
 
-	<announcement text="Cohorts and Companions v1.0.2 by MostTornBrain.   Heavily based on FriendZone, by MeAndUnique." font="emotefont" />
+	<announcement text="Cohorts and Companions v1.0.2 by MostTornBrain.  Heavily based on FriendZone, by MeAndUnique." font="emotefont" />
 
 </root>
