@@ -22,6 +22,11 @@
 
 			<anchor_column name="columnanchor" />
 			
+			<!-- Note this frame will (mostly) overlay the parent frame ("cohort_frame" from record_char.xml) 
+				 and not be visible. -->
+			<frame_char name="ghost_frame">
+				<bounds>16,0,-1,125</bounds>
+			</frame_char>
 			<label_frametop name="cohortstitle">
 				<anchored height="20">
 					<top parent="columnanchor" anchor="bottom" relation="relative" offset="17" />
@@ -30,13 +35,7 @@
 				</anchored>
 				<static textres="char_cohorts_label_cohorts" />
 			</label_frametop>
-			
-			<!-- Note this frame will (mostly) overlay the parent frame ("cohort_frame" from record_char.xml) 
-				 and not be visible. -->
-			<frame_char name="ghost_frame">
-				<bounds>16,0,-1,125</bounds>
-			</frame_char>
-			
+						
 			<list_text name="cohortlist">
 				<anchored to="ghost_frame">
 					<top offset="30" />
