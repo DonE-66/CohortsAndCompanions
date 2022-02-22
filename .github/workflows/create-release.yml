@@ -29,12 +29,12 @@ jobs:
     - name: Archive Release
       uses: thedoctor0/zip-release@master
       with:
-        filename: 'FriendZone.ext'
+        filename: 'CohortsAndCompanions.ext'
         exclusions: '*.git* *.github* *.resources* /*node_modules/* .editorconfig *.ext'
 
     - name: Create Release
       uses: ncipollo/release-action@v1
       with:
-        artifacts: "FriendZone.ext"
+        artifacts: "CohortAndCompanions.ext"
         token: ${{ secrets.GITHUB_TOKEN }}
         allowUpdates: true
