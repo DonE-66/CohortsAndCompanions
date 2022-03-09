@@ -16,7 +16,7 @@
 				<bounds>15,360,-29,-2</bounds>
 			</frame_char>
 			
-			<subwindow name="contents">
+			<subwindow name="cohort_contents">
 				<anchored>
 					<top parent="cohorts_frame" anchor="top" relation="relative" offset="0" />
 					<left offset="0" />

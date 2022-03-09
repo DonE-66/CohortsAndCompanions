@@ -77,9 +77,19 @@ function linkPFRPGNPCFields()
 	end
 end
 
+function link2ENPCFields()
+end
+
+function linkOSE2NPCFields()
+end
+
 function linkNPCFields()
 	if User.getRulesetName() == "4E" then
 		link4ENPCFields();
+	elseif User.getRulesetName() == "2E" then
+		link2ENPCFields();
+	elseif User.getRulesetName() == "OSE2" then
+		linkOSE2NPCFields();
 	else
 		linkPFRPGNPCFields();
 	end
