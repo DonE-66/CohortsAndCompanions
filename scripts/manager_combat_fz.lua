@@ -7,6 +7,7 @@ local showTurnMessageOriginal;
 local centerOnTokenOriginal;
 local addNPCHelperOriginal;
 local addUnitOriginal;
+local addCTANPCOriginal;
 
 function onInit()
 	showTurnMessageOriginal = CombatManager.showTurnMessage;
@@ -18,10 +19,26 @@ function onInit()
 	addNPCHelperOriginal = CombatManager.addNPCHelper;
 	CombatManager.addNPCHelper = addNPCHelper;
 
+	-- for 2E
+	if User.getRulesetName() == "2E" then
+    	addCTANPCOriginal = CombatManagerADND.addCTANPC;
+		CombatManagerADND.addCTANPC = addCTANPC;
+	end
+
 	if CombatManagerKw then
 		addUnitOriginal = CombatManagerKw.addUnit;
 		CombatManagerKw.addUnit = addUnit;
 	end
+end
+
+function addCTANPC(sClass, nodeNPC, sNamedInBattle)
+	local bIsCohort = FriendZone.isCohort(nodeNPC);
+	local nodeEntry = addCTANPCOriginal(sClass, nodeNPC, sNamedInBattle);
+	if nodeEntry and bIsCohort then
+		DB.setValue(nodeEntry, "link", "windowreference", "npc", nodeNPC.getPath());
+		DB.setValue(nodeEntry, "friendfoe", "string", "friend");
+	end
+	return nodeEntry;
 end
 
 function showTurnMessage(nodeEntry, bActivate, bSkipBell)

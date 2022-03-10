@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<!-- 
+  Please see the license file included with this distribution for 
+  attribution and copyright information.
+-->
+
+<root>
+	<windowclass name="combatants_entry_host" merge="join">
+		<script file="cta/scripts/cta_entry.lua" />
+	</windowclass>
+</root>

@@ -27,15 +27,13 @@
 		<!-- Include custom char sheet merge depending on rule system.
 		     2E uses a different format from everything else. 
 		-->
-		<includefile ruleset="OSE2"  source="campaign/record_char.xml" />
+		<includefile ruleset="OSE2|3.5E|PFRPG|4E"  source="campaign/record_char.xml" />
 		<includefile ruleset="2E"    source="campaign/record_char_2E.xml" />
-		<includefile ruleset="3.5E"  source="campaign/record_char.xml" />
-		<includefile ruleset="PFRPG" source="campaign/record_char.xml" />
-		<includefile ruleset="4E"    source="campaign/record_char.xml" />
 
 		<includefile source="campaign/record_char_cohorts.xml" />
 		<includefile source="campaign/record_npc.xml" />
 		<includefile source="ct/ct_host.xml" />
+		<includefile ruleset="2E"    source="cta/cta_host.xml" />
 
 		<includefile source="strings/strings.xml" />
 		<includefile source="graphics/graphics_icons.xml" />
