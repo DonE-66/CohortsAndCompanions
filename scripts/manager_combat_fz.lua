@@ -19,7 +19,7 @@ function onInit()
 	addNPCHelperOriginal = CombatManager.addNPCHelper;
 	CombatManager.addNPCHelper = addNPCHelper;
 
-	-- for 2E
+	-- for 2E, it does not call addNPCHelper
 	if User.getRulesetName() == "2E" then
     	addCTANPCOriginal = CombatManagerADND.addCTANPC;
 		CombatManagerADND.addCTANPC = addCTANPC;
@@ -31,15 +31,20 @@ function onInit()
 	end
 end
 
+-- Special function for 2E since it uses a somewhat different combat tracker
 function addCTANPC(sClass, nodeNPC, sNamedInBattle)
 	local bIsCohort = FriendZone.isCohort(nodeNPC);
 	local nodeEntry = addCTANPCOriginal(sClass, nodeNPC, sNamedInBattle);
 	if nodeEntry and bIsCohort then
+		-- Override values set by addCTANPCOriginal():
+		-- 		so the nodeEntry links to the NPC on the PC Sheet
+		-- 		and so it is friendly
 		DB.setValue(nodeEntry, "link", "windowreference", "npc", nodeNPC.getPath());
 		DB.setValue(nodeEntry, "friendfoe", "string", "friend");
 	end
 	return nodeEntry;
 end
+
 
 function showTurnMessage(nodeEntry, bActivate, bSkipBell)
 	showTurnMessageOriginal(nodeEntry, bActivate, bSkipBell);

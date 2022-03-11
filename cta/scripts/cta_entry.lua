@@ -1,38 +1,33 @@
 
--- This is only used for 2E
+--
+-- The functions here are only used for 2E
+--
 
-function onInit()
-	super.onInit();
+function onFirstLayout()
 	onLinkChanged(); -- call the overload.
 end
 
 function onLinkChanged()
-	print("ENTER: 2E onLinkChanged");
 	local node = getDatabaseNode();
+
 	-- If a cohort NPC, then set up the links
 	-- TODO - this is not getting the class info when dragged,
 	-- but after the campaign is reloaded, then it works.
 	local sClass, sRecord = DB.getValue(node,"link","","");
-	print("Class is ");
-	print(sClass);
 	if FriendZone.isCohort(sRecord) then
 		if sClass == "npc" then
 			linkNPCFields(DB.findNode(sRecord));
-		else
-			print("Not an NPC!");
 		end
 		name.setLine(false);
-	else
-		print("Not a cohort!");
 	end
 
-	-- The super does NOT link and NPC, so it's ok to call in all cases
+	-- The super does NOT link an NPC, so it's ok to call in all cases
 	super.onLinkChanged();
+
 end
 
 
 function linkNPCFields(nodeChar)
-	print("ENTER: linkNPCFields");
 	if nodeChar then
 		name.setLink(nodeChar.createChild("name", "string"), true);
 	  
