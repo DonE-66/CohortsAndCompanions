@@ -8,7 +8,7 @@
 <root release="3.0" version="3">
 	<properties>
 		<name>Feature: Cohorts and Companions</name>
-		<version>v1.0.5</version>
+		<version>v1.0.6</version>
 		<author>MostTornBrain</author>
 		<description>Assign ownership of NPCs to PCs to allow players direct control of NPCs in the combat tracker and on the maps.</description>
 		<loadorder>150</loadorder>
@@ -22,6 +22,7 @@
 	<base>
 		<script name="ActorManagerFZ" file="scripts/manager_actor_fz.lua" />
 		<script name="CombatManagerFZ" file="scripts/manager_combat_fz.lua" />
+		<script name="TokenManagerCandC" file="scripts/manager_token_candc.lua" />
 		<script name="FriendZone" file="scripts/friendzone.lua" />
 
 		<!-- Include custom char sheet merge depending on rule system.
@@ -40,6 +41,6 @@
 		<includefile source="graphics/graphics_tabs.xml" />
 	</base>
 
-	<announcement text="Cohorts and Companions v1.0.5 by MostTornBrain.  Heavily based on FriendZone, by MeAndUnique." font="emotefont" />
+	<announcement text="Cohorts and Companions v1.0.6 by MostTornBrain.  Originally based on FriendZone, by MeAndUnique." font="emotefont" />
 
 </root>
