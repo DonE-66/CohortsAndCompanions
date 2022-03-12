@@ -25,6 +25,7 @@ function onInit()
 		CombatManagerADND.addCTANPC = addCTANPC;
 	end
 
+	-- left over from 5E Friend Zone code.  Is this needed?
 	if CombatManagerKw then
 		addUnitOriginal = CombatManagerKw.addUnit;
 		CombatManagerKw.addUnit = addUnit;

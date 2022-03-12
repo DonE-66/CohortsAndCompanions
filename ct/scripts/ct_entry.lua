@@ -82,6 +82,25 @@ function link2ENPCFields()
 end
 
 function linkOSE2NPCFields()
+	local nodeChar = link.getTargetDatabaseNode();
+	if nodeChar then
+		name.setLink(nodeChar.createChild("name", "string"), true);
+		initresult.setLink(nodeChar.createChild("initresult", "number"), false);
+		senses.setLink(nodeChar.createChild("senses", "string"), true);
+		armor_class.setLink(nodeChar.createChild("ac_current", "number"), true);
+		thaco.setLink(nodeChar.createChild("thaco", "number"), true);
+		dsave_score.setLink(nodeChar.createChild("dsave_score", "number"), true);	
+		wsave_score.setLink(nodeChar.createChild("wsave_score", "number"), true);
+		psave_score.setLink(nodeChar.createChild("psave_score", "number"), true);	
+		bsave_score.setLink(nodeChar.createChild("bsave_score", "number"), true);		
+		ssave_score.setLink(nodeChar.createChild("ssave_score", "number"), true);
+		poison.setLink(nodeChar.createChild("poison", "number"), true);
+		hp_current.setLink(nodeChar.createChild("hp_current", "number"), false);	
+		wounds.setLink(nodeChar.createChild("wounds", "number"), false);	
+		temp_hp.setLink(nodeChar.createChild("temp_hp", "number"), false);	
+		maxhp_combat.setLink(nodeChar.createChild("maxhp_combat", "number"), false);
+		Level_current.setLink(nodeChar.createChild("Level_new", "number"), false);								
+	end	
 end
 
 function linkNPCFields()
@@ -90,7 +109,6 @@ function linkNPCFields()
 	elseif User.getRulesetName() == "2E" then
 		link2ENPCFields();
 	elseif User.getRulesetName() == "OSE2" then
-		print("OSE2");
 		linkOSE2NPCFields();
 	else
 		linkPFRPGNPCFields();
