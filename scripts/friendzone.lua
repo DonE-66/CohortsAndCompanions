@@ -3,7 +3,6 @@
 -- attribution and copyright information.
 --
 
-local notifyAddHolderOwnershipOriginal;
 
 function onInit()
 
@@ -38,20 +37,3 @@ function isCohort(vRecord)
 
 	return false;
 end
-
-function notifyAddHolderOwnership(node, sUserName, bOwner, bForceAccessRemoval)
-	local rActor = ActorManager.resolveActor(node);
-	if isCohort(rActor) then
-		if bOwner then
-			ChatManager.SystemMessage(Interface.getString("assistant_gm_cohort_ownership"));
-		end
-	else
-		notifyAddHolderOwnershipOriginal(node, sUserName, bOwner, bForceAccessRemoval);
-	end
-end
-
-function getCommanderNode(vCohort)
-	local nodeCohort = ActorManager.getCreatureNode(vCohort);
-	return DB.getChild(nodeCohort, "...");
-end
-
