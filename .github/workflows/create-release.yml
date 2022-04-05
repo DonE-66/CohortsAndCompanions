@@ -30,7 +30,7 @@ jobs:
       uses: thedoctor0/zip-release@master
       with:
         filename: 'CohortsAndCompanions.ext'
-        exclusions: '*.git* *.github* *.resources* /*node_modules/* .editorconfig *.ext'
+        exclusions: '*.git* *.github* *.resources* /*node_modules/* .editorconfig *.ext .luacheck*'
 
     - name: Create Release
       uses: ncipollo/release-action@v1
