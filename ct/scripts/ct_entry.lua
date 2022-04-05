@@ -77,6 +77,26 @@ function linkPFRPGNPCFields()
 	end
 end
 
+function linkPFRPG2NPCFields()
+	local nodeChar = link.getTargetDatabaseNode();
+	if nodeChar then
+		name.setLink(nodeChar.createChild("name", "string"), true);		
+		init.setLink(nodeChar.createChild("init", "number"), true);		
+		senses.setLink(nodeChar.createChild("senses", "string"), true);
+		hp.setLink(nodeChar.createChild("hp", "number"));
+
+		-- These don't exist on a normal NPC sheet, but we will save them
+		hptemp.setLink(nodeChar.createChild("hp_temp", "number"));
+		current.setLink(nodeChar.createChild("hp_current", "number"));
+		wounds.setLink(nodeChar.createChild("hp_wounds", "number"));		
+
+		ac_final.setLink(nodeChar.createChild("ac", "number"), true);		
+		fortitudesave.setLink(nodeChar.createChild("fortitudesave", "number"), true);
+		reflexsave.setLink(nodeChar.createChild("reflexsave", "number"), true);
+		willsave.setLink(nodeChar.createChild("willsave", "number"), true);
+	end
+end
+
 function link2ENPCFields()
 	print("2E NPC linking not handled here!   We should not be here.");
 end
@@ -110,6 +130,8 @@ function linkNPCFields()
 		link2ENPCFields();
 	elseif User.getRulesetName() == "OSE2" then
 		linkOSE2NPCFields();
+	elseif User.getRulesetName() == "PFRPG2" then
+		linkPFRPG2NPCFields();
 	else
 		linkPFRPGNPCFields();
 	end
