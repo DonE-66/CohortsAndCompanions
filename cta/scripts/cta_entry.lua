@@ -38,7 +38,7 @@ function linkNPCFields(nodeChar)
 		hptotal.setLink(nodeChar.createChild("hp", "number"));
 		hptemp.setLink(nodeChar.createChild("hptemporary", "number"));
 		wounds.setLink(nodeChar.createChild("hpwounds", "number"));
-  
+
 	end
 end
 

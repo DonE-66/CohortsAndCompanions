@@ -98,6 +98,7 @@ function linkPFRPG2NPCFields()
 end
 
 function link2ENPCFields()
+	-- See linkNPCFields() in cta/scripts/cta_entry.lua for the 2E handling
 	print("2E NPC linking not handled here!   We should not be here.");
 end
 
