@@ -8,7 +8,7 @@
 <root release="3.0" version="3">
 	<properties>
 		<name>Feature: Cohorts and Companions</name>
-		<version>v1.0.8</version>
+		<version>v1.0.9</version>
 		<author>MostTornBrain</author>
 		<description>Assign ownership of NPCs to PCs to allow players direct control of NPCs in the combat tracker and on the maps.</description>
 		<loadorder>150</loadorder>
@@ -33,7 +33,8 @@
 		<includefile ruleset="2E"    source="campaign/record_char_2E.xml" />
 
 		<includefile source="campaign/record_char_cohorts.xml" />
-		<includefile source="campaign/record_npc.xml" />
+		<includefile ruleset="2E|OSE2|3.5E|PFRPG|4E" source="campaign/record_npc.xml" />
+		<includefile ruleset="PFRPG2" source="campaign/record_npc_PFRPG2.xml" />
 		<includefile source="ct/ct_host.xml" />
 		<includefile ruleset="2E"    source="cta/cta_host.xml" />
 
@@ -42,6 +43,6 @@
 		<includefile source="graphics/graphics_tabs.xml" />
 	</base>
 
-	<announcement text="Cohorts and Companions v1.0.8 by MostTornBrain.  Originally based on FriendZone, by MeAndUnique." font="emotefont" />
+	<announcement text="Cohorts and Companions v1.0.9 by MostTornBrain.  Originally based on FriendZone, by MeAndUnique." font="emotefont" />
 
 </root>

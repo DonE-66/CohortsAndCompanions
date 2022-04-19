@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<!-- 
+  Please see the license.txt file included with this distribution for 
+  attribution and copyright information.
+-->
+
+<root>
+	<windowclass name="npc" merge="join">
+	<frame>recordsheet</frame>
+	<script>
+		<!-- 
+		  For reasons I don't understand, trying to add the "Cohorts" tab
+		  via the usual window sheetdata merge, PFRPG2 does something wonky in
+		  reaction to the <tabs_sheetdata>, so this needs to be done via an init function.
+		-->
+		function onInit()
+     		tabs.addTab("cohorts", "tab_cohorts", false);
+    		super.onInit();
+		end
+	</script>
+	<sheetdata>
+			<subwindow_record name="cohorts">
+				<class>charsheet_cohorts_contents</class>
+				<invisible />
+			</subwindow_record>
+
+			<scrollbar_record>
+				<target>cohorts</target>
+			</scrollbar_record>
+
+			<resize_recordsheet />
+			<close_recordsheet />
+		</sheetdata>
+	</windowclass>
+</root>
