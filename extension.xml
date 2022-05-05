@@ -8,7 +8,7 @@
 <root release="3.0" version="3">
 	<properties>
 		<name>Feature: Cohorts and Companions</name>
-		<version>v1.0.9</version>
+		<version>v1.1</version>
 		<author>MostTornBrain</author>
 		<description>Assign ownership of NPCs to PCs to allow players direct control of NPCs in the combat tracker and on the maps.</description>
 		<loadorder>150</loadorder>
@@ -18,6 +18,7 @@
 		<ruleset><name>3.5E</name></ruleset>
 		<ruleset><name>PFRPG</name></ruleset>
 		<ruleset><name>PFRPG2</name></ruleset>
+		<ruleset><name>Swords and Wizardry</name></ruleset>
 	</properties>
 
 	<base>
@@ -29,11 +30,11 @@
 		<!-- Include custom char sheet merge depending on rule system.
 		     2E uses a different format from everything else. 
 		-->
-		<includefile ruleset="OSE2|3.5E|PFRPG|4E|PFRPG2"  source="campaign/record_char.xml" />
+		<includefile ruleset="OSE2|3.5E|PFRPG|4E|PFRPG2|Swords and Wizardry"  source="campaign/record_char.xml" />
 		<includefile ruleset="2E"    source="campaign/record_char_2E.xml" />
 
 		<includefile source="campaign/record_char_cohorts.xml" />
-		<includefile ruleset="2E|OSE2|3.5E|PFRPG|4E" source="campaign/record_npc.xml" />
+		<includefile ruleset="2E|OSE2|3.5E|PFRPG|4E|Swords and Wizardry" source="campaign/record_npc.xml" />
 		<includefile ruleset="PFRPG2" source="campaign/record_npc_PFRPG2.xml" />
 		<includefile source="ct/ct_host.xml" />
 		<includefile ruleset="2E"    source="cta/cta_host.xml" />
@@ -43,6 +44,6 @@
 		<includefile source="graphics/graphics_tabs.xml" />
 	</base>
 
-	<announcement text="Cohorts and Companions v1.0.9 by MostTornBrain.  Originally based on FriendZone, by MeAndUnique." font="emotefont" />
+	<announcement text="Cohorts and Companions v1.1 by MostTornBrain.  Originally based on FriendZone, by MeAndUnique." font="emotefont" />
 
 </root>
