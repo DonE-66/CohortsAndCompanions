@@ -123,7 +123,20 @@ function linkOSE2NPCFields()
 		Level_current.setLink(nodeChar.createChild("Level_new", "number"), false);								
 	end	
 end
-
+function linkSWNPCFields()
+	local nodeChar = link.getTargetDatabaseNode();
+	if nodeChar then
+		name.setLink(nodeChar.createChild("name", "string"), true);
+		initresult.setLink(nodeChar.createChild("initresult", "number"), false);
+		senses.setLink(nodeChar.createChild("senses", "string"), true);
+		armor_class.setLink(nodeChar.createChild("ac_current", "number"), true);
+		hp_current.setLink(nodeChar.createChild("hp_current", "number"), false);	
+		wounds.setLink(nodeChar.createChild("wounds", "number"), false);	
+		temp_hp.setLink(nodeChar.createChild("temp_hp", "number"), false);	
+		maxhp_combat.setLink(nodeChar.createChild("maxhp_combat", "number"), false);
+		Level_current.setLink(nodeChar.createChild("hd_current", "number"), false);								
+	end	
+end
 function linkNPCFields()
 	if User.getRulesetName() == "4E" then
 		link4ENPCFields();
@@ -133,6 +146,8 @@ function linkNPCFields()
 		linkOSE2NPCFields();
 	elseif User.getRulesetName() == "PFRPG2" then
 		linkPFRPG2NPCFields();
+	elseif 	User.getRulesetName() == "Swords and Wizardry" then
+		linkSWNPCFields()
 	else
 		linkPFRPGNPCFields();
 	end
