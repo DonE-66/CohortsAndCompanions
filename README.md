@@ -1,5 +1,5 @@
 # Cohorts and Companions
-This Fantasy Grounds Unity extension adds support for assigning control of NPCs to player characters in the D&D 2E, D&D 3.5, Pathfinder 1E, Pathfinder 2E, D&D 4E, Old School Essentials (OSE), and Swords and Wizardry rulesets.   Originally based on a subset of code from the D&D 5E extension Friend Zone, by MeAndUnique (https://github.com/MeAndUnique/FriendZone)
+This Fantasy Grounds Unity extension adds support for assigning control of NPCs to player characters in the D&D 2E, D&D 3.5, Pathfinder 1E, Pathfinder 2E, D&D 4E, Old School Essentials (OSE), and Swords and Wizardry rulesets.   This was originally based on a subset of code from the D&D 5E extension Friend Zone, by MeAndUnique (https://github.com/MeAndUnique/FriendZone).
 
 
 ## Installation
