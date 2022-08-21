@@ -5,7 +5,7 @@
 
 local showTurnMessageOriginal;
 local centerOnTokenOriginal;
-local addNPCHelperOriginal;
+local onNPCPostAddOriginal;
 local addUnitOriginal;
 local addCTANPCOriginal;
 
@@ -16,8 +16,8 @@ function onInit()
 	centerOnTokenOriginal = CombatManager.centerOnToken;
 	CombatManager.centerOnToken = centerOnToken;
 
-	addNPCHelperOriginal = CombatManager.addNPCHelper;
-	CombatManager.addNPCHelper = addNPCHelper;
+	onNPCPostAddOriginal = CombatRecordManager.getRecordTypePostAddCallback("npc");
+	CombatRecordManager.setRecordTypePostAddCallback("npc", onNPCPostAdd);
 
 	-- for 2E, it does not call addNPCHelper
 	if User.getRulesetName() == "2E" then
@@ -77,25 +77,18 @@ function centerOnToken(nodeEntry, bOpen)
 	end
 end
 
-function addNPCHelper(nodeNPC, sName)
-	local bIsCohort = FriendZone.isCohort(nodeNPC);
-	local nodeEntry, nodeLastMatch = addNPCHelperOriginal(nodeNPC, sName);
-	if nodeEntry and bIsCohort then
-		DB.setValue(nodeEntry, "link", "windowreference", "npc", nodeNPC.getPath());
-		DB.setValue(nodeEntry, "friendfoe", "string", "friend");
-	end
-	return nodeEntry, nodeLastMatch;
+function onNPCPostAdd(tCustom)
+	onNPCPostAddOriginal(tCustom);
+	trySetCohortLinkAndFaction(tCustom);
 end
 
-function addUnit(sClass, nodeUnit, sName)
-	local nodeEntry = addUnitOriginal(sClass, nodeUnit, sName);
-	if nodeEntry then
-		local bIsCohort = FriendZone.isCohort(nodeUnit);
-		if bIsCohort then
-			DB.setValue(nodeEntry, "link", "windowreference", "reference_unit", nodeUnit.getPath());
-			DB.setValue(nodeEntry, "friendfoe", "string", "friend");
-		end
+function trySetCohortLinkAndFaction(tCustom)
+	local bIsCohort = FriendZone.isCohort(tCustom.nodeRecord);
+	if tCustom.nodeCT and bIsCohort then
+		local sClass = tCustom.sClass or LibraryData.getRecordDisplayClass(tCustom.sRecordType);
+		local nodeCommander = FriendZone.getCommanderNode(tCustom.nodeRecord);
+		local sFaction = ActorManager.getFaction(nodeCommander);
+		DB.setValue(tCustom.nodeCT, "link", "windowreference", sClass, tCustom.nodeRecord.getPath());
+		DB.setValue(tCustom.nodeCT, "friendfoe", "string", sFaction);
 	end
-
-	return nodeEntry;
 end

@@ -37,3 +37,8 @@ function isCohort(vRecord)
 
 	return false;
 end
+
+function getCommanderNode(vCohort)
+	local nodeCohort = ActorManager.getCreatureNode(vCohort);
+	return DB.getChild(nodeCohort, "...");
+end
