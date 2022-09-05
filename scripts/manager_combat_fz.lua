@@ -78,7 +78,11 @@ function centerOnToken(nodeEntry, bOpen)
 end
 
 function onNPCPostAdd(tCustom)
-	onNPCPostAddOriginal(tCustom);
+
+	-- Some rulesets do not have this function, so don't call it if it isn't defined.
+	if onNPCPostAddOriginal then
+		onNPCPostAddOriginal(tCustom);
+	end
 	trySetCohortLinkAndFaction(tCustom);
 end
 
