@@ -7,24 +7,12 @@
 
 <root>
 	<windowclass name="npc" merge="join">
-		<sheetdata>
-			<subwindow_record name="cohorts">
-				<class>charsheet_cohorts_contents</class>
-				<invisible />
-			</subwindow_record>
-
-			<scrollbar_record>
-				<target>cohorts</target>
-			</scrollbar_record>
-
-			<tabs_charsheet name="tabs">
-				<script>
-					function onInit()
-						super.onInit();
-						addTab("cohorts", "tab_cohorts", false);
-					end
-				</script>
-			</tabs_charsheet>
-		</sheetdata>
+	<!-- Add the cohorts tab to the NPC window -->
+		<tab merge="add">
+			<name>cohorts</name>
+			<resource>tab_cohorts</resource>
+			<class>charsheet_cohorts_contents</class>
+			<embed />
+		</tab>
 	</windowclass>
 </root>

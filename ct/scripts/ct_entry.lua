@@ -148,6 +148,8 @@ function linkNPCFields()
 		linkOSE2NPCFields();
 	elseif User.getRulesetName() == "PFRPG2" then
 		linkPFRPG2NPCFields();
+	elseif User.getRulesetName() == "PFRPG2-Legacy" then
+		linkPFRPG2NPCFields();
 	elseif 	User.getRulesetName() == "Swords and Wizardry" then
 		linkSWNPCFields();
 	else

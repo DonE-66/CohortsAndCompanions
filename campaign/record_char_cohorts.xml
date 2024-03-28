@@ -52,7 +52,9 @@
 					function update()
 						local bEdit = (window.cohorts_iedit.getValue() == 1);
 						for _,w in ipairs(getWindows()) do
-							w.idelete.setVisibility(bEdit);
+							if w then
+								w.idelete.setVisibility(bEdit);
+							end
 						end
 					end
 

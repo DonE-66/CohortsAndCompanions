@@ -3,7 +3,7 @@ This Fantasy Grounds Unity extension adds support for assigning control of NPCs 
 
 
 ## Installation
-Download [CohortsAndCompanions.ext](https://github.com/MostTornBrain/CohortsAndCompanions/releases) and place in the extensions subfolder of the Fantasy Grounds data folder.
+Download [CohortsAndCompanions.ext](https://github.com/DonE-66/CohortsAndCompanions/releases) and place in the extensions subfolder of the Fantasy Grounds data folder.
 
 If you would like to use the "release" version maintained on the FG Forge, it can be found here: https://forge.fantasygrounds.com/shop/items/518/view
 
