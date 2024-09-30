@@ -97,6 +97,24 @@ function linkPFRPG2NPCFields()
 	end
 end
 
+function linkSFRPGNPCFields()
+	local nodeChar = link.getTargetDatabaseNode();
+	if nodeChar then
+		name.setLink(nodeChar.createChild("name", "string"), true);
+		init.setLink(nodeChar.createChild("init", "number"), true);
+		senses.setLink(nodeChar.createChild("senses", "string"), true);
+		hp.setLink(nodeChar.createChild("hp", "number"));
+
+		-- These don't exist on a normal NPC sheet, but we will save them
+		hptemp.setLink(nodeChar.createChild("hp_temp", "number"));
+		wounds.setLink(nodeChar.createChild("hp_wounds", "number"));
+		
+		fortitudesave.setLink(nodeChar.createChild("fortitudesave", "number"), true);
+		reflexsave.setLink(nodeChar.createChild("reflexsave", "number"), true);
+		willsave.setLink(nodeChar.createChild("willsave", "number"), true);
+	end
+end
+
 function link2ENPCFields()
 	-- See linkNPCFields() in cta/scripts/cta_entry.lua for the 2E handling
 	print("2E NPC linking not handled here!   We should not be here.");
@@ -150,6 +168,8 @@ function linkNPCFields()
 		linkPFRPG2NPCFields();
 	elseif User.getRulesetName() == "PFRPG2-Legacy" then
 		linkPFRPG2NPCFields();
+	elseif User.getRulesetName() == "SFRPG" then
+		linkSFRPGNPCFields();
 	elseif 	User.getRulesetName() == "Swords and Wizardry" then
 		linkSWNPCFields();
 	else

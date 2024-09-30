@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<!-- 
+  Please see the license.html file included with this distribution for 
+  attribution and copyright information.
+-->
+
+<root>
+	<windowclass name="charsheet_notes" merge="join">
+		<sheetdata>
+			<frame_char name="cohorts_frame">
+				<bounds>15,305,-29,125</bounds>
+			</frame_char>
+						
+			<frame_char name="notesframe">
+				<bounds>15,430,-29,-2</bounds>
+			</frame_char>
+			
+			<subwindow name="cohort_contents">
+				<anchored>
+					<top parent="cohorts_frame" anchor="top" relation="relative" offset="0" />
+					<left offset="0" />
+					<right parent="cohorts_frame" anchor="right" relation="relative" />
+				</anchored>
+				<class>charsheet_cohorts_contents</class>
+				<activate />
+				<fastinit />
+			</subwindow>
+			
+		</sheetdata>
+	</windowclass>
+</root>

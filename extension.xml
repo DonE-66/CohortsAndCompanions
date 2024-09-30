@@ -19,6 +19,7 @@
 		<ruleset><name>PFRPG</name></ruleset>
 		<ruleset><name>PFRPG2</name></ruleset>
 		<ruleset><name>PFRPG2-Legacy</name></ruleset>
+		<ruleset><name>SFRPG</name></ruleset>
 		<ruleset><name>Swords and Wizardry</name></ruleset>
 	</properties>
 
@@ -32,10 +33,11 @@
 		     2E uses a different format from everything else. 
 		-->
 		<includefile ruleset="OSE2|3.5E|PFRPG|4E|PFRPG2|PFRPG2-Legacy|Swords and Wizardry"  source="campaign/record_char.xml" />
+		<includefile ruleset="SFRPG"  source="campaign/record_char_SF.xml" />
 		<includefile ruleset="2E"    source="campaign/record_char_2E.xml" />
 
 		<includefile source="campaign/record_char_cohorts.xml" />
-		<includefile ruleset="2E|OSE2|3.5E|PFRPG|PFRPG2|PFRPG2-Legacy|4E|Swords and Wizardry" source="campaign/record_npc.xml" />
+		<includefile ruleset="2E|OSE2|3.5E|PFRPG|PFRPG2|PFRPG2-Legacy|4E|SFRPG|Swords and Wizardry" source="campaign/record_npc.xml" />
 		<includefile source="ct/ct_host.xml" />
 		<includefile ruleset="2E"    source="cta/cta_host.xml" />
 
@@ -45,6 +47,6 @@
 
 	</base>
 
-	<announcement text="Cohorts and Companions v1.5 by DonE66. Prior versions to 1.5 by MostTornBrain. Originally based on FriendZone, by MeAndUnique." font="emotefont" />
+	<announcement text="Cohorts and Companions v1.6 by DonE66. Prior versions to 1.5 by MostTornBrain. Originally based on FriendZone, by MeAndUnique." font="emotefont" />
 
 </root>
