@@ -105,9 +105,10 @@ function linkSFRPGNPCFields()
 		senses.setLink(nodeChar.createChild("senses", "string"), true);
 		hp.setLink(nodeChar.createChild("hp", "number"));
 
-		-- These don't exist on a normal NPC sheet, but we will save them
 		hptemp.setLink(nodeChar.createChild("hp_temp", "number"));
 		wounds.setLink(nodeChar.createChild("hp_wounds", "number"));
+		eac.setLink(nodeChar.createChild("eac", "number"));
+		kac.setLink(nodeChar.createChild("kac", "number"));
 		
 		fortitudesave.setLink(nodeChar.createChild("fortitudesave", "number"), true);
 		reflexsave.setLink(nodeChar.createChild("reflexsave", "number"), true);
