@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<!-- 
+  Please see the license.html file included with this distribution for 
+  attribution and copyright information.
+-->
+
+<root>
+	<windowclass name="charsheet_notes" merge="join">
+		<sheetdata>
+			<formattedtextfield name="notes" merge="join">
+				<bounds>8,155,-178,-8</bounds>
+			</formattedtextfield>
+			<stringcontrol name="notes_label" merge="join">
+				<bounds>-225,141,50,20</bounds>
+			</stringcontrol>
+			<list_text name="description_list" merge="join">
+				<bounds>-155,157,140,-205</bounds>
+			</list_text>
+			<stringfield name="description_list_label" merge="join">
+				<bounds>-154,143,80,20</bounds>
+			</stringfield>
+			<button_iedit name="description_list_iedit" merge="join">
+				<bounds>-34,144,20,20</bounds>
+			</button_iedit>
+			<button_iadd name="description_list_iadd" merge="join">
+				<bounds>-56,144,20,20</bounds>
+			</button_iadd>
+			
+			<subwindow name="cohort_contents">
+				<bounds>8,8,-29,125</bounds>
+				<class>charsheet_cohorts_contents</class>
+				<activate />
+				<fastinit />
+			</subwindow>
+		</sheetdata>
+	</windowclass>
+</root>

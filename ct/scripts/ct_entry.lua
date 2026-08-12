@@ -158,6 +158,20 @@ function linkSWNPCFields()
 	end	
 end
 
+function linkXCoreNPCFields()
+	local nodeChar = link.getTargetDatabaseNode();
+	if nodeChar then
+		name.setLink(nodeChar.createChild("name", "string"), true);
+		initresult.setLink(nodeChar.createChild("initresult", "number"), false);
+		health.setLink(nodeChar.createChild("health", "number"), true);
+		n1.setLink(nodeChar.createChild("n1", "number"), true);
+		n2.setLink(nodeChar.createChild("n2", "number"), true);
+		wounds.setLink(nodeChar.createChild("wounds", "number"), true);
+		init_roll.setlink(nodeChar.createChild("init_roll", "string"), true);
+		senses.setLink(nodeChar.createChild("senses", "string"), true);
+	end
+end
+
 function linkNPCFields()
 	if User.getRulesetName() == "4E" then
 		link4ENPCFields();
@@ -173,6 +187,8 @@ function linkNPCFields()
 		linkSFRPGNPCFields();
 	elseif 	User.getRulesetName() == "Swords and Wizardry" then
 		linkSWNPCFields();
+	elseif User.getRulesetName() == "XCore" then
+		linkXCoreNPCFields();
 	else
 		linkPFRPGNPCFields();
 	end
